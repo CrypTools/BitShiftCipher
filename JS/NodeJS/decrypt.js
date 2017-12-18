@@ -1,6 +1,6 @@
 /*****************************************
 
-Use: "Wzk1NjgzMjIsMTMzNjk0MTAsMTQyODY5MTQsMTQyODY5MTQsMTQ2ODAxMzAsNDMyNTQ0MiwxMTUzNDQwMiwxNDY4MDEzMCwxNTA3MzM0NiwxNDI4NjkxNCwxMzIzODMzOCw0NDU2NTE0XQ==".decrypt("key")
+Use: "Wzk1NjgzMjIsMTM0MzY5MjgsMTQyODY5MTQsMTQzNTQ0MzIsMTQ2ODAxMzAsNDM5Mjk2MCwxMTUzNDQwMiwxNDc0NzY0OCwxNTA3MzM0NiwxNDM1NDQzMiwxMzIzODMzOF0=".decrypt("key")
 => "Hello World!"
 
 ******************************************/
@@ -21,6 +21,7 @@ String.prototype.decrypt = function(key) {
         new Buffer(this.toString(), 'base64').toString('ascii')
     )
     let decrypted = array.map(x => {
+		keyEncoded.reverse()
         x = parseInt(x)
         for (let i of keyEncoded) {
             x = x - 1 >> i % 12

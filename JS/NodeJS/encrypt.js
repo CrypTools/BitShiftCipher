@@ -1,7 +1,7 @@
 /*****************************************
 
 Use: "Hello World!".encrypt("key")
-=> "Wzk1NjgzMjIsMTMzNjk0MTAsMTQyODY5MTQsMTQyODY5MTQsMTQ2ODAxMzAsNDMyNTQ0MiwxMTUzNDQwMiwxNDY4MDEzMCwxNTA3MzM0NiwxNDI4NjkxNCwxMzIzODMzOCw0NDU2NTE0XQ=="
+=> "Wzk1NjgzMjIsMTM0MzY5MjgsMTQyODY5MTQsMTQzNTQ0MzIsMTQ2ODAxMzAsNDM5Mjk2MCwxMTUzNDQwMiwxNDc0NzY0OCwxNTA3MzM0NiwxNDM1NDQzMiwxMzIzODMzOF0="
 
 ******************************************/
 
@@ -24,6 +24,7 @@ String.prototype.encrypt = function(key) {
         for (let i of keyEncoded) {
             x = x + 1 << i % 12
         }
+		keyEncoded.reverse()
         return x;
     })
     return new Buffer(JSON.stringify(array)).toString('base64')
