@@ -1,3 +1,9 @@
+/*********************************
+
+Use: "Hello World!".encrypt(keyValue: "key")
+	 "Hello World!".encrypt(keyValue: "key").decrypt(keyValue: "key")
+
+*********************************/
 import Foundation
 
 // Get array of ascii values from string
