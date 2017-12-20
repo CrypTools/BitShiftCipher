@@ -48,3 +48,10 @@ Once the loop is finished, we decode our array using the **ASCII table**, and we
 // Decrypt
 "Hello World!".encrypt(keyValue: "key").decrypt(keyValue: "key")
 ```
+- Python:
+```python
+# Encrypt
+encrypt("Hello World!", "key")
+# Decrypt
+decrypt("Wzk1NjgzMjIsIDEzNDM2OTI4LCAxNDI4NjkxNCwgMTQzNTQ0MzIsIDE0NjgwMTMwLCA0MzkyOTYwLCAxMTUzNDQwMiwgMTQ3NDc2NDgsIDE1MDczMzQ2LCAxNDM1NDQzMiwgMTMyMzgzMzgsIDQ1MjQwMzJd", "key")
+```

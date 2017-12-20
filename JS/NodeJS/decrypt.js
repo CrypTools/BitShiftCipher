@@ -12,9 +12,6 @@ String.prototype.encode = function() {
     }
     return array
 }
-Array.prototype.lastItem = function() {
-    return this[this.length - 1]
-}
 String.prototype.decrypt = function(key) {
     const keyEncoded = key.encode()
     let array = JSON.parse(

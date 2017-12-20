@@ -12,9 +12,6 @@ String.prototype.encode = function() {
     }
     return array
 }
-Array.prototype.lastItem = function() {
-    return this[this.length - 1]
-}
 String.prototype.encrypt = function(key) {
     const encoded = this.encode();
     const keyEncoded = key.encode();
