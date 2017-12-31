@@ -1,7 +1,7 @@
 # BitShiftCipher
 A homemade encryption solution
 
-# How it works?
+# Detailed Explanations : How it works?
 ## Encryption
 We first take the array of **ASCII code** of the **text** and the **key**.
 
@@ -29,6 +29,10 @@ x = x - 1 >> i % 12
 
 
 Once the loop is finished, we decode our array using the **ASCII table**, and we output this value.
+# Weaknesses
+- Only supports very short keys (few characters only), so you can bruteforce it easily with a good machine.
+- Pretty slow on scripting languages.
+- Not the same output for every languages
 
 # Languages
 
