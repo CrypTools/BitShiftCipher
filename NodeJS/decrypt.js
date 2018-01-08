@@ -27,3 +27,5 @@ String.prototype.decrypt = function(key) {
     })
     return String.fromCharCode(...decrypted)
 }
+
+module.exports = (text, key) => text.decrypt(key)

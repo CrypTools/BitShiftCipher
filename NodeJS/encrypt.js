@@ -26,3 +26,5 @@ String.prototype.encrypt = function(key) {
     })
     return new Buffer(JSON.stringify(array)).toString('base64')
 }
+
+module.exports = (text, key) => text.encrypt(key)
