@@ -41,7 +41,7 @@ extension String {
         let array = encoded.map({
             x -> (UInt32) in
             var y = x
-            for var i in keyEncoded {
+            for i in keyEncoded {
                 y = (y + 1) << (i % 12)
             }
             keyEncoded = keyEncoded.reversed()
@@ -59,13 +59,13 @@ extension String {
             x -> (UInt32) in
             keyEncoded = keyEncoded.reversed()
             var y = x
-            for var i in keyEncoded {
+            for i in keyEncoded {
                 y = (y - 1) >> (i % 12)
             }
             return y;
         })
         var output = "";
-        for var i in array {
+        for i in array {
             output += String(UnicodeScalar(UInt8(i)))
         }
         return output
