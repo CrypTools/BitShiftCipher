@@ -1,16 +1,12 @@
 matrix:
   include:
     - language:           node_js
-    node_js:
-        - "node"
-        - "lts/*"
-        - "7"
-        - "8"
-    before_install:
-        - npm install -g npm@latest
-    install:
-        - npm install -g eye.js
-    script:
-        - eye
+        node_js: "node"
+        before_install:
+            - npm install -g npm@latest
+        install:
+            - npm install -g eye.js
+        script:
+            - eye
 notifications:
   email:                  false
