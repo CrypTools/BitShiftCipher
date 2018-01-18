@@ -1,8 +1,10 @@
 import base64
 
 def encode(text):
-        encoded = [ord(i) for i in text]
-        return encoded
+        # returns integer representing the Unicode code point of a character
+        # For example, ord('a') returns 97
+        encoded_arr = [ord(i) for i in text]
+        return encoded_arr
 
 def decrypt(text, key):
 	encoded_key = encode(key)
@@ -13,11 +15,9 @@ def decrypt(text, key):
 		encoded_key = list(reversed(encoded_key))
 		for i in encoded_key:
 			x = x - 1 >> i % 12
-		buf.append(x)
-	
-	decrypted_string = ''.join(chr(letter) for letter in buf)
+		buf.append(x)	
+	decrypted_string = ''.join(chr(letter) for letter in buf) # chr() opposite of ord()
 	print(decrypted_string)
-	# return decrypted_string
 
 ####################################
 #
