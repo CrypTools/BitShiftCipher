@@ -2,10 +2,10 @@ import base64
 
 def encode(text):
         # returns integer representing the Unicode code point of a character
-        # For example, ord('a') returns 97
+        # For example, ord('A') returns 65
         encoded_arr = [ord(i) for i in text]
         return encoded_arr
-    
+
 def encrypt(text, key):
         encoded_text = encode(text)
         encoded_key = encode(key)
@@ -23,8 +23,7 @@ def encrypt(text, key):
 
 ####################################
 #
-# Uncomment: 
+# Uncomment:
 #encrypt("Hello World!", "key")
 #
 ####################################
-
