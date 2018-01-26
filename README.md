@@ -38,7 +38,7 @@ A = 0b01000001 # ASCII for A
     0b01000010000010000000 # O is 79, 79 % 12 = 7, so we add 7 zeros.
 ```
 
-After each character is encoded, we add it to an array and reverse the key to make cryptanalysis harder.
+After each character is encoded, we add it to an array and reverse the key to make frequency analysis harder.
 
 Let's say the next character in our string is `B`, our key now is `OY`, as it was reversed.
 
@@ -81,7 +81,7 @@ The character `A` was encoded as `0b01000010000010000000`. The key was `YO`, but
 ## Pros & Cons
 
 ### Pros
-* Reversing the key makes cryptanalysis hard.
+* Reversing the key makes frequency analysis hard.
 * Key can be as long as you want, and include special characters, making brute force harder.
 
 ### Cons
