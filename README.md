@@ -5,6 +5,7 @@
 </p>
 <p align="center">
 <img src="https://cryptools.github.io/img/status/implemented.svg">
+<img src="https://img.shields.io/travis/CrypTools/BitShiftCipher.svg">
 <img src="https://img.shields.io/github/license/Cryptools/BitShiftCipher.svg">
 <img src="https://img.shields.io/github/contributors/Cryptools/BitShiftCipher.svg">
 </p>
@@ -97,7 +98,7 @@ The character `A` was encoded as `0b01000010000010000000`. The key was `YO`, but
 
 ## Running the tests
 
-Tests are automatically handled by [Travis CI](https://travis-ci.org).
+Tests are automatically handled by [Travis CI](https://travis-ci.org/CrypTools/BitShiftCipher/).
 
 ## Contributing
 
