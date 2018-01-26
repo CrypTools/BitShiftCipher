@@ -1,4 +1,4 @@
-# BitShift Cipher 
+# BitShift Cipher
 <p align="center">
 <!-- replace image by project Image -->
 <img height="128" src="https://cryptools.github.io/img/bit-shift.svg">
@@ -109,9 +109,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Lucas Gruwez** - *Initial work* - [@lucasgruwez](https://github.com/lucasgruwez)
-* **Luka Lafaye** - *Suggested the cipher* - [@lukalafaye](https://github.com/lucasgruwez)
-* **Arthur Guiot** - *Wrote JS Implementation* - [@arguoit](https://github.com/arguiot)
+* **Arthur Guiot** - *Initial work* - [@arguiot](https://github.com/arguiot)
 
 See also the list of [contributors](https://github.com/CrypTools/BitShiftCipher/contributors) who participated in this project.
 
