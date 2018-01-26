@@ -83,10 +83,11 @@ The character `A` was encoded as `0b01000010000010000000`. The key was `YO`, but
 
 ### Pros
 * Reversing the key makes frequency analysis hard.
-* Key can be as long as you want, and include special characters, making brute force harder.
+* Key can be as long as you want (theoretically, depends on your programming language), and include special characters, making brute force harder.
 
 ### Cons
 * Different languages have different outputs depending on the base64 support.
+* Developed at [CrypTools](https://cryptools.github.io) by [@arguiot](https://github.com/arguiot), who isn't a professional cryptologist, so it might have some security issues.
 
 ## Implementations
 
@@ -110,7 +111,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Arthur Guiot** - *Initial work* - [@arguiot](https://github.com/arguiot)
+* **Arthur Guiot** - *Initial work & conception* - [@arguiot](https://github.com/arguiot)
 
 See also the list of [contributors](https://github.com/CrypTools/BitShiftCipher/contributors) who participated in this project.
 
