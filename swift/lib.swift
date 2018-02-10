@@ -1,7 +1,7 @@
 /*********************************
 
-Use: "Hello World!".encrypt(keyValue: "key")
-	 "Hello World!".encrypt(keyValue: "key").decrypt(keyValue: "key")
+Use: "Hello World!".encrypt("key")
+	 "Hello World!".encrypt("key").decrypt("key")
 
 *********************************/
 import Foundation
@@ -34,7 +34,7 @@ extension String {
 }
 
 extension String {
-    func encrypt(keyValue: String) -> String {
+    func encrypt(_ keyValue: String) -> String {
         let encoded = self.asciiArray
         var keyEncoded = keyValue.asciiArray
 
@@ -49,7 +49,7 @@ extension String {
         })
         return array.description.toBase64()
     }
-    func decrypt(keyValue: String) -> String {
+    func decrypt(_ keyValue: String) -> String {
         let toString = self.fromBase64()
         let chars = CharacterSet(charactersIn: ",][ ")
         let encoded = toString!.components(separatedBy: chars).filter {$0 != ""}.flatMap { UInt32($0)}
