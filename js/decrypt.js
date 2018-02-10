@@ -21,7 +21,7 @@ String.prototype.decrypt = function(key) {
 		keyEncoded.reverse()
         x = parseInt(x)
         for (let i of keyEncoded) {
-            x = x - 1 >> i % 12
+            x = x - 1 >> i % 8
         }
         return x;
     })

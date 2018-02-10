@@ -21,7 +21,7 @@ The Bitshift Cipher works by (as the name suggests) shifting over the bits of th
 To encode the text, we loop through the text, and for each character `x`, we loop through the key array, and for each key character `i`:
 
 ```py
-x = x + 1 << i % 12
+x = x + 1 << i % 8
 ```
 
 We limit the maximum shift using modulo to avoid having a bit shifted by hundreds of places
@@ -33,10 +33,10 @@ Let's imagine we are currently working on the character `A`, and that our key is
 ```Python
 A = 0b01000001 # ASCII for A
     0b01000010 # plus 1
-    0b0100001000000 # Y is 89, 89 % 12 = 5, so we add 5 zeros.
+    0b010000100 # Y is 89, 89 % 8 = 1, so we add 1 zero.
     # next charachter in key: O
-    0b0100001000001 # plus 1
-    0b01000010000010000000 # O is 79, 79 % 12 = 7, so we add 7 zeros.
+    0b010000101 # plus 1
+    0b0100001010000000 # O is 79, 79 % 8 = 7, so we add 7 zeros.
 ```
 
 After each character is encoded, we add it to an array and reverse the key to make frequency analysis harder.
@@ -46,35 +46,35 @@ Let's say the next character in our string is `B`, our key now is `OY`, as it wa
 ```Python
 B = 0b01000010 # ASCII for B
     0b01000011 # plus 1
-    0b010000110000000 # O is 79, 79 % 12 = 7, so we add 7 zeros.
+    0b010000110000000 # O is 79, 79 % 8 = 7, so we add 7 zeros.
     # next character in key: Y
     0b010000110000001 # plus 1
-    0b01000011000000100000 # Y is 89, 89 % 12 = 5, so we add 5 zeros.
+    0b0100001100000010 # Y is 89, 89 % 8 = 1, so we add 1 zero.
 ```
 
-Our array now looks like this: `[0b01000010000010000000, 0b01000011000000100000]`, or in decimal: `[270464, 274464]`.
+Our array now looks like this: `[0b0100001010000000, 0b0100001100000010]`, or in decimal: `[17024, 17154]`.
 
-Finally, we encode the array in base64 to get the final encrypted string: `b'WzI3MDQ2NCwgMjc0NDY0XQ=='`.
+Finally, we encode the array in base64 to get the final encrypted string: `b'WzE3MDI0LCAxNzE1NF0='`.
 
 ### Decoding
 
 To decode, we start by decoding and evaluating the base64 string, and then we reverse the key. We can then loop through the text and key like for the encoding process:
 
 ```Python
-x = x - 1 >> i % 12
+x = x - 1 >> i % 8
 ```
 
 Example:
 
-The character `A` was encoded as `0b01000010000010000000`. The key was `YO`, but we reversed it, so we will be using `OY`.
+The character `A` was encoded as `0b0100001010000000`. The key was `YO`, but we reversed it, so we will be using `OY`.
 
 ```Python
-? = 0b01000010000010000000
-  = 0b01000010000001111111  # minus 1
-  = 0b0100001000000 # O is 79, 79 % 12 = 7, so we remove the 7 least significant bits
+A = 0b0100001010000000
+  = 0b0100001001111111  # minus 1
+  = 0b010000100 # O is 79, 79 % 8 = 7, so we remove the 7 least significant bits
   # next character in key: Y
-  = 0b0100000111111 # minus 1
-  = 0b01000001 # Y is 89, 89 % 12 = 5, so we remove the 5 least significant bits
+  = 0b010000011 # minus 1
+  = 0b01000001 # Y is 89, 89 % 8 = 1, so we remove the least significant bit
 ```
 
 `0b01000001` is `A` in ASCII, so we have successfully decoded the first letter. We carry on like this, making sure that we remember to reverse the key every time.

@@ -9,15 +9,14 @@ def encode(text):
 def decrypt(text, key):
 	encoded_key = encode(key)
 	decoded_b64 = eval(base64.b64decode(text))
-	#print(decoded)
 	buf = []
 	for x in decoded_b64:
 		encoded_key = list(reversed(encoded_key))
 		for i in encoded_key:
-			x = x - 1 >> i % 12
+			x = x - 1 >> i % 8
 		buf.append(x)	
 	decrypted_string = ''.join(chr(letter) for letter in buf) # chr() opposite of ord()
-	print(decrypted_string)
+	return decrypted_string
 
 ####################################
 #

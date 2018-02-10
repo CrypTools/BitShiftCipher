@@ -19,7 +19,7 @@ String.prototype.encrypt = function(key) {
     let array = encoded.map(x => {
         x = parseInt(x)
         for (let i of keyEncoded) {
-            x = x + 1 << i % 12
+            x = x + 1 << i % 8
         }
 		keyEncoded.reverse()
         return x;

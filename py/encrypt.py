@@ -12,13 +12,12 @@ def encrypt(text, key):
         buf = []
         for x in encoded_text:
                 for i in encoded_key:
-                        x = x + 1 << i % 12
+                        x = x + 1 << i % 8
                 encoded_key = list(reversed(encoded_key))
                 buf.append(x)
 
         encrypt_string = base64.b64encode(str(buf).encode("ascii"))
-        print(encrypt_string)
-        # return encrypt_string
+        return encrypt_string
 
 
 ####################################

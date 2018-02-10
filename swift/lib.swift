@@ -42,7 +42,7 @@ extension String {
             x -> (UInt32) in
             var y = x
             for i in keyEncoded {
-                y = (y + 1) << (i % 12)
+                y = (y + 1) << (i % 8)
             }
             keyEncoded = keyEncoded.reversed()
             return y;
@@ -60,7 +60,7 @@ extension String {
             keyEncoded = keyEncoded.reversed()
             var y = x
             for i in keyEncoded {
-                y = (y - 1) >> (i % 12)
+                y = (y - 1) >> (i % 8)
             }
             return y;
         })
