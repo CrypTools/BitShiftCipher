@@ -1,9 +1,10 @@
-/*****************************************
-
-Use: "Hello World!".encrypt("key")
-=> "WzM3NDQyLDUyNDg4LDU1ODc0LDU2MDcyLDU3NDEwLDE3MTYwLDQ1MTIyLDU3NjA4LDU4OTQ2LDU2MDcyLDUxNzc4XQ=="
-
-******************************************/
+/* ==========================================================================
+ *
+ *  Use:
+ *  "Hello World!".encrypt("key")
+ *  => "WzM3NDQyLDUyNDg4LDU1ODc0LDU2MDcyLDU3NDEwLDE3MTYwLDQ1MTIyLDU3NjA4LDU4OTQ2LDU2MDcyLDUxNzc4XQ=="
+ *
+ * ========================================================================== */
 
 String.prototype.encode = function() {
     let array = [];
