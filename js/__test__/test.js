@@ -7,9 +7,9 @@ const decrypt = require(path + "decrypt.js")
 
 
 eye.test("Encryption", "node",
-	$ => $(encrypt("Hello World", "key")).Equal("Wzk1NjgzMjIsMTM0MzY5MjgsMTQyODY5MTQsMTQzNTQ0MzIsMTQ2ODAxMzAsNDM5Mjk2MCwxMTUzNDQwMiwxNDc0NzY0OCwxNTA3MzM0NiwxNDM1NDQzMiwxMzIzODMzOF0=")
+	$ => $(encrypt("Hello World", "key")).Equal("WzM3NDQyLDUyNDg4LDU1ODc0LDU2MDcyLDU3NDEwLDE3MTYwLDQ1MTIyLDU3NjA4LDU4OTQ2LDU2MDcyLDUxNzc4XQ==")
 )
 eye.test("Decryption", "node",
-	$ => $(decrypt("Wzk1NjgzMjIsMTM0MzY5MjgsMTQyODY5MTQsMTQzNTQ0MzIsMTQ2ODAxMzAsNDM5Mjk2MCwxMTUzNDQwMiwxNDc0NzY0OCwxNTA3MzM0NiwxNDM1NDQzMiwxMzIzODMzOF0=", "key")).Equal("Hello World"),
+	$ => $(decrypt("WzM3NDQyLDUyNDg4LDU1ODc0LDU2MDcyLDU3NDEwLDE3MTYwLDQ1MTIyLDU3NjA4LDU4OTQ2LDU2MDcyLDUxNzc4XQ==", "key")).Equal("Hello World"),
 	$ => $(decrypt(encrypt("Hello World!", "key"), "key")).Equal("Hello World!")
 )
