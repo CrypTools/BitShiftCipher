@@ -15,8 +15,11 @@ String.prototype.encode = function() {
 }
 String.prototype.decrypt = function(key) {
     const keyEncoded = key.encode()
+	if (typeof atob === 'undefined') {
+        global.atob = b64Encoded => new Buffer(b64Encoded, 'base64').toString();
+    }
     let array = JSON.parse(
-        new Buffer(this.toString(), 'base64').toString('ascii')
+        atob(this.toString())
     )
     let decrypted = array.map(x => {
 		keyEncoded.reverse()

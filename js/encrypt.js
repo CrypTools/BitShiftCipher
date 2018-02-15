@@ -22,10 +22,13 @@ String.prototype.encrypt = function(key) {
         for (let i of keyEncoded) {
             x = x + 1 << i % 8
         }
-		keyEncoded.reverse()
+        keyEncoded.reverse()
         return x;
     })
-    return new Buffer(JSON.stringify(array)).toString('base64')
+    if (typeof btoa === 'undefined') {
+        global.btoa = str => new Buffer(str, 'binary').toString('base64');
+    }
+    return btoa(JSON.stringify(array))
 }
 
 module.exports = (text, key) => text.encrypt(key)
