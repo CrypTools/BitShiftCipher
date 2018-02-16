@@ -16,5 +16,6 @@ install:
 script:
     - eye # JS
     - swiftc swift/lib.swift -o out # Swift
+    - swift swift/__test__/test.swift # Swift testing
 notifications:
   email:                false
