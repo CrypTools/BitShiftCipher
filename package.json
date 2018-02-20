@@ -1,0 +1,29 @@
+{
+  "name": "@cryptoolsorg/bitshiftcipher",
+  "version": "1.0.0",
+  "description": "A homemade encryption solution",
+  "main": "js/lib.js",
+  "scripts": {
+    "test": "eye"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrypTools/BitShiftCipher.git"
+  },
+  "keywords": [
+    "cryptography",
+    "encryption",
+    "cipher",
+    "bitshift",
+    "cryptools"
+  ],
+  "author": "CrypTools",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrypTools/BitShiftCipher/issues"
+  },
+  "homepage": "https://github.com/CrypTools/BitShiftCipher#readme",
+  "devDependencies": {
+    "eye.js": "^1.1.0"
+  }
+}

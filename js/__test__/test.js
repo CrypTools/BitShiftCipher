@@ -2,8 +2,7 @@
 
 const path = require('path').normalize(__testDir + "/../")
 
-const encrypt = require(path + "encrypt.js")
-const decrypt = require(path + "decrypt.js")
+const { encrypt, decrypt } = require(path + "lib.js")
 
 
 eye.test("Encryption", "node",

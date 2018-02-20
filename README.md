@@ -97,6 +97,11 @@ A = 0b0100001010000000
 |   Python   | [encrypt.py](py/encrypt.py) | [decrypt.py](py/decrypt.py) |
 |   Swift    | [lib.swift](swift/lib.swift)| [lib.swift](swift/lib.swift)|
 
+### Package managers
+**NPM:**
+```bash
+npm i @cryptoolsorg/bitshiftcipher
+```
 ## Running the tests
 
 Tests are automatically handled by [Travis CI](https://travis-ci.org/CrypTools/BitShiftCipher/).
