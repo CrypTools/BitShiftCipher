@@ -116,7 +116,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Arthur Guiot** - *Initial work & conception* - [@arguiot](https://github.com/arguiot)
+Made with ❤️ at CrypTools.
 
 See also the list of [contributors](https://github.com/CrypTools/BitShiftCipher/contributors) who participated in this project.
 
